@@ -1,6 +1,6 @@
 {
   "name": "ember-currencies",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Ember utils for currencies lists and extra helpers.",
   "directories": {
     "doc": "doc",
