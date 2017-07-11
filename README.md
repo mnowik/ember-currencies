@@ -1,27 +1,104 @@
 # Ember-currencies
 
-This README outlines the details of collaborating on this Ember addon.
+A simple Addon that contains the 2 following lists:
+ - all the currencies in ISO3 (USD), ISO-Numeric (840), English name (United States dollar) formats and their symbol ($) if applicable.
+ - the currencies per country.
+
+Here are a list of the main helpers:
+ - Currency ISO3 or ISO-Numeric to Currency object.
+ - Country ISO2 to array of Currencies object (countries may have multiple currencies).
+
+You can find more information about ISO 4217 codes here:
+ - [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)
+ - [Currency Authority](http://www.xe.com/iso4217.php)
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-currencies`
-* `npm install`
-* `bower install`
+* `ember install ember-currencies`
 
-## Running
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+## Usage
 
+### All imports
+```js
+import { CURRENCIES_LIST, CURRENCIES_PER_COUNTRY_LIST } from 'ember-currencies';
+import { getCurrency, getCurrenciesForCountry } from 'ember-currencies';
+import defaultEmberCurrencies from 'ember-currencies';
+```
+
+### Example 1: currencies lists
+```js
+import Em from 'ember';
+import { CURRENCIES_LIST } from 'ember-currencies';
+
+export default Em.Controller.extend({
+
+  CURRENCIES_LIST: CURRENCIES_LIST,
+  ...
+});
+```
+
+### Example 2: currencies properties
+```js
+import Em from 'ember';
+import { getCurrency } from 'ember-currencies';
+
+export default Em.Controller.extend({
+
+  currencyHelper() {
+    let expect   = {name: "United States dollar", iso3: "USA", isoNumeric: "840", symbol: "$"};
+    let currency1 = getCurrency('USD');
+    let currency2 = getCurrency('840');
+    
+    currency1 === expect  // true
+    currency2 === expect  // true
+    
+  },
+  ...
+});
+```
+
+### Example 3: Currencies per country lists
+```js
+import Em from 'ember';
+import emberCurrencies from 'ember-currencies';
+
+export default Em.Controller.extend({
+
+  US_STATES: emberCurrencies.CURRENCIES_PER_COUNTRY_LIST,
+  ...
+});
+```
+
+### Example 4: states properties
+```js
+import Em from 'ember';
+import { getCurrenciesForCountry } from 'ember-currencies';
+
+export default Em.Controller.extend({
+
+  currencyHelper() {
+    let expect = {name: "United States dollar", iso3: "USA", isoNumeric: "840", symbol: "$"};
+    let currency = getCurrenciesForCountry('US');
+    
+    currency === expect  // true
+  },
+  ...
+});
+```
 ## Running Tests
 
 * `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 
+
 ## Building
 
 * `ember build`
 
 For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+
+## Contributing
+
+PRs welcome!
