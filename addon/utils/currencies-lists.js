@@ -183,7 +183,7 @@ export const CURRENCIES_LIST = A([
   {iso3: 'YER', isoNumeric: '886', symbol: '﷼'   , name: 'Yemeni rial'                                               },
   {iso3: 'ZAR', isoNumeric: '710', symbol: 'R'   , name: 'South African rand'                                        },
   {iso3: 'ZMW', isoNumeric: '967', symbol: ''    , name: 'Zambian kwacha'                                            },
-  {iso3: 'ZWL', isoNumeric: '932', symbol: ''    , name: 'Zimbabwean dollar A/10'                                    }
+  {iso3: 'ZWL', isoNumeric: '932', symbol: ''    , name: 'Zimbabwean dollar A/10'                                    }
 ]);
 
 
