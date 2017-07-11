@@ -1,5 +1,5 @@
 import Em from 'ember';
-import { CURRENCIES_LIST, CURRENCIES_SYMBOLS_LIST, CURRENCIES_PER_COUNTRY_LIST } from './currencies-lists';
+import { CURRENCIES_LIST, CURRENCIES_PER_COUNTRY_LIST } from './currencies-lists';
 import { getFormat, buildIndex } from './helpers';
 
 const {
@@ -15,22 +15,24 @@ export function getCurrency(value) {
   if (valueFormat === null) {return;}
 
   let listIndexed = _getCurrenciesListIndexed(valueFormat);
-  let selectedCountry = listIndexed[value.toUpperCase()];
+  let selectedCurrency = listIndexed[value.toUpperCase()];
 
-  if (!isNone(selectedCountry)) {
-    return selectedCountry;
+  if (!isNone(selectedCurrency)) {
+    return selectedCurrency;
   }
 }
 
 
-// export function getCurrencySymbol(value) {
+export function getCurrenciesForCountry(value) {
+  let valueFormat = getFormat(value);
+  if (valueFormat === null || valueFormat !== 'iso2') {return [];}
 
-// }
-
-
-// export function getCurrencyOfCountry(value) {
-
-// }
+  let currenciesList = CURRENCIES_PER_COUNTRY_LIST.filterBy('country', value);
+  
+  return currenciesList.map(val => {
+    return getCurrency(val.currency);
+  });
+}
 
 
 function _getCurrenciesListIndexed(code) {

@@ -1,16 +1,18 @@
 import { CURRENCIES_LIST, CURRENCIES_SYMBOLS_LIST, CURRENCIES_PER_COUNTRY_LIST } from './utils/currencies-lists';
-import { getCurrency } from './utils/currencies-properties';
+import { getCurrency, getCurrenciesForCountry } from './utils/currencies-properties';
 
 export {
   CURRENCIES_LIST,
   CURRENCIES_SYMBOLS_LIST,
   CURRENCIES_PER_COUNTRY_LIST,
-  getCurrency
+  getCurrency,
+  getCurrenciesForCountry
 };
 
 export default {
   CURRENCIES_LIST,
   CURRENCIES_SYMBOLS_LIST,
   CURRENCIES_PER_COUNTRY_LIST,
-  getCurrency
+  getCurrency,
+  getCurrenciesForCountry
 };
