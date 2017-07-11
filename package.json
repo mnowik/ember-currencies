@@ -1,7 +1,7 @@
 {
   "name": "ember-currencies",
   "version": "0.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember utils for currencies lists and extra helpers.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,11 @@
     "start": "ember server",
     "test": "ember try:each"
   },
-  "repository": "",
+  "repository": "https://github.com/mnowik/ember-currencies",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Matthieu Nowicki",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
@@ -41,7 +41,10 @@
     "loader.js": "^4.0.1"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "utils",
+    "currencies",
+    "list"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6"

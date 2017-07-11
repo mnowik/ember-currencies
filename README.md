@@ -1,4 +1,5 @@
 # Ember-currencies
+[![npm version](https://badge.fury.io/js/ember-currencies.svg)](https://badge.fury.io/js/ember-currencies)
 
 A simple Addon that contains the 2 following lists:
  - all the currencies in ISO3 (USD), ISO-Numeric (840), English name (United States dollar) formats and their symbol ($) if applicable.
