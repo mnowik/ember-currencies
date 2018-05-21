@@ -1,10 +1,9 @@
-import Em from 'ember';
-import { CURRENCIES_LIST, CURRENCIES_PER_COUNTRY_LIST } from './currencies-lists';
+import { isNone } from '@ember/utils';
+import {
+  CURRENCIES_LIST,
+  CURRENCIES_PER_COUNTRY_LIST
+} from './currencies-lists';
 import { getFormat, buildIndex } from './helpers';
-
-const {
-  isNone
-} = Em;
 
 let indexedByIso3;
 let indexedByIsoNumeric;
