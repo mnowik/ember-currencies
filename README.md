@@ -50,10 +50,10 @@ export default Em.Controller.extend({
     let expect   = {name: "United States dollar", iso3: "USA", isoNumeric: "840", symbol: "$"};
     let currency1 = getCurrency('USD');
     let currency2 = getCurrency('840');
-    
+
     currency1 === expect  // true
     currency2 === expect  // true
-    
+
   },
   ...
 });
@@ -81,7 +81,7 @@ export default Em.Controller.extend({
   currencyHelper() {
     let expect = {name: "United States dollar", iso3: "USA", isoNumeric: "840", symbol: "$"};
     let currency = getCurrenciesForCountry('US');
-    
+
     currency === expect  // true
   },
   ...
@@ -89,10 +89,9 @@ export default Em.Controller.extend({
 ```
 ## Running Tests
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
+* `ember test` – Runs the test suite on the current Ember version
+* `ember test --server` – Runs the test suite in "watch mode"
+* `ember try:each` – Runs the test suite against multiple Ember versions
 
 ## Building
 
